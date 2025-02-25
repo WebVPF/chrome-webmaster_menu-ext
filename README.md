@@ -4,7 +4,7 @@
 
 Chrome Market Extension Page: [chrome.google.com](https://chromewebstore.google.com/detail/webmaster-menu/bjnkfhenfiekcfbkgpkblcbldphjkldc)
 
-For browsers Opera and Yandex: [addons.opera.com](https://addons.opera.com/ru/extensions/details/webmaster-menu/)
+For browsers Opera and Yandex: [addons.opera.com](https://addons.opera.com/ru/extensions/details/webmaster-menu)
 
 The WEBMASTER MENU extension adds menu items to the browser context menu that open the analysis of viewed web pages in various validators and services.
 
@@ -22,4 +22,4 @@ List of available items for the browser context menu:
 
 In the extension options you can enable/disable the items you need from this menu.
 
-![settings webmaster menu](https://raw.githubusercontent.com/WebVPF/webmaster-menu/master/img/screen-settings.jpg)
+![settings webmaster menu](https://raw.githubusercontent.com/WebVPF/chrome-webmaster_menu-ext/master/img/screen-settings.jpg)
