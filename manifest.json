@@ -3,7 +3,7 @@
     "name": "__MSG_extName__",
     "description": "__MSG_extDescription__",
     "author": "WebVPF",
-    "version": "2.2.1",
+    "version": "2.2.2",
     "icons": {
         "16": "img/16.png",
         "48": "img/48.png",
