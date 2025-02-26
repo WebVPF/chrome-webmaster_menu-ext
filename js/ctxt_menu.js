@@ -1,4 +1,4 @@
-const itemsId = [
+const ITEMS_ID = [
     'pagespeed',
     'validHTML',
     'validCSS',
@@ -32,10 +32,10 @@ function openPageAnalysis(info, tab) {
 }
 
 function createItemsMenu() {
-    const keyStorage = itemsId.map(el => `settings_${ el }`);
+    const keyStorage = ITEMS_ID.map(el => `settings_${ el }`);
 
     chrome.storage.sync.get(keyStorage, result => {
-        itemsId.forEach(el => {
+        ITEMS_ID.forEach(el => {
             if (result[`settings_${ el }`]) {
                 chrome.contextMenus.create({
                     id: el,
@@ -58,14 +58,26 @@ chrome.contextMenus.onClicked.addListener(openPageAnalysis);
 chrome.storage.onChanged.addListener(() => chrome.contextMenus.removeAll(createItemsMenu));
 
 /**
- * Задать настройки по умолчанию после установки расширения
+ * Слушатель событий действий расширения
  */
 chrome.runtime.onInstalled.addListener(details => {
-    if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+    /**
+     * Событие установки расширения
+     */
+    if (details.OnInstalledReason === 'install') {
+        /**
+         * Задать настройки по умолчанию после установки расширения
+         */
         let params = {};
 
-        itemsId.forEach(el => params[`settings_${ el }`] = true);
+        ITEMS_ID.forEach(el => params[`settings_${ el }`] = true);
 
         chrome.storage.sync.set(params);
+
+
+        /**
+         * Открыть страницу настроек расширения
+         */
+        chrome.runtime.openOptionsPage();
     }
 });
